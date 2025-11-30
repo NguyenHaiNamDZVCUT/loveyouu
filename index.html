@@ -40,61 +40,38 @@
 
     /* Heart */
     .heart {
-      width: 160px;
-      height: 160px;
+      width: 100px; /* Điều chỉnh kích thước trái tim */
+      height: 90px;
       position: relative;
       margin: 0 auto 18px;
       animation: pulse 1.3s ease-in-out infinite;
-      transform: rotate(-45deg);
     }
 
     .heart:before,
     .heart:after {
-      content: "";
       position: absolute;
-      width: 160px;
-      height: 160px;
+      content: '';
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
       background: var(--pink2);
-      border-radius: 50%;
-    }
-
-    .heart:before {
-      top: -80px;
-      left: 0;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
     }
 
     .heart:after {
-      left: 80px;
-      top: 0;
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
     }
 
-    /* Middle diamond (the actual body of the heart) */
-    .heart .mid {
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      background: var(--pink2);
-      transform: rotate(45deg);
-      top: 40px;
-      left: 40px;
-    }
-<div class="heart" aria-hidden="true">
-  <div class="mid"></div>
-</div>
 
     @keyframes pulse {
-      0%   { transform: rotate(-45deg) scale(1); }
-      50%  { transform: rotate(-45deg) scale(1.08); }
-      100% { transform: rotate(-45deg) scale(1); }
-    }{
-      0%{transform:rotate(-45deg) scale(1)}
-      50%{transform:rotate(-45deg) scale(1.06)}
-      100%{transform:rotate(-45deg) scale(1)}
-    }
-{
-      0%{transform:rotate(-45deg) scale(1)}
-      50%{transform:rotate(-45deg) scale(1.06)}
-      100%{transform:rotate(-45deg) scale(1)}
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
 
     h1{margin:6px 0 8px;font-size:28px;font-weight:900;color:#5a2940}
@@ -165,9 +142,7 @@
       <div class="floater" style="left:84%; width:20px;height:20px; animation-delay:2s"></div>
     </div>
 
-    <div class="heart" aria-hidden="true">
-      <div class="shine"></div>
-    </div>
+    <div class="heart" aria-hidden="true"></div>
 
     <h1>Cho mình làm người đặc biệt nhé 💖</h1>
     <p class="lead">Mình có điều muốn nói — nhấn nút bên dưới để nhận lời tỏ tình dễ thương này.</p>
