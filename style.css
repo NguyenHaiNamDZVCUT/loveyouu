@@ -1,0 +1,47 @@
+/* Heart */
+.heart {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin: 0 auto 18px;
+  animation: pulse 1.3s ease-in-out infinite;
+  transform: rotate(-45deg);
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: var(--pink2);
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -80px;
+  left: 0;
+}
+
+.heart:after {
+  left: 80px;
+  top: 0;
+}
+
+/* middle diamond (body) */
+.heart .mid {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: var(--pink2);
+  top: 40px;
+  left: 40px;
+  transform: rotate(45deg);
+}
+
+/* clean animation */
+@keyframes pulse {
+  0%   { transform: rotate(-45deg) scale(1); }
+  50%  { transform: rotate(-45deg) scale(1.08); }
+  100% { transform: rotate(-45deg) scale(1); }
+}
