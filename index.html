@@ -40,37 +40,50 @@
 
     /* Heart */
     .heart {
-      width:220px;
-      height:220px;
-      position:relative;
-      margin:0 auto 18px;
-      transform:rotate(-45deg) scale(1);
-      animation: pulse 1200ms ease-in-out infinite;
-      filter:drop-shadow(0 8px 18px rgba(255,77,158,0.18));
-      /* add a background so the middle (diamond) is visible as part of the heart */
-      background:linear-gradient(135deg,var(--pink1),var(--pink2));
-      border-radius:20px;
-    }
-    .heart:before, .heart:after{
-      content:"";
-      position:absolute;
-      width:220px;
-      height:220px;
-      background:linear-gradient(135deg,var(--pink1),var(--pink2));
-      border-radius:50%;
-    }
-    .heart:before{left:0; top:-110px}
-    .heart:after{left:110px; top:0}
-    .heart > .shine{
-      position:absolute; inset:16% 16% 38% 16%;
-      transform:rotate(-45deg);
-      border-radius:50% 50% 40% 40%/60% 60% 30% 30%;
-      background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.06));
-      mix-blend-mode:screen;
-      opacity:0.9;
+      width: 160px;
+      height: 160px;
+      position: relative;
+      margin: 0 auto 18px;
+      animation: pulse 1.3s ease-in-out infinite;
+      transform: rotate(-45deg);
     }
 
-    @keyframes pulse{
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background: var(--pink2);
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -80px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 80px;
+      top: 0;
+    }
+
+    /* Middle diamond (the actual body of the heart) */
+    .heart .mid {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background: var(--pink2);
+      transform: rotate(45deg);
+      top: 40px;
+      left: 40px;
+    }
+
+    @keyframes pulse {
+      0%   { transform: rotate(-45deg) scale(1); }
+      50%  { transform: rotate(-45deg) scale(1.08); }
+      100% { transform: rotate(-45deg) scale(1); }
+    }{
       0%{transform:rotate(-45deg) scale(1)}
       50%{transform:rotate(-45deg) scale(1.06)}
       100%{transform:rotate(-45deg) scale(1)}
